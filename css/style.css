@@ -66,6 +66,7 @@ header{
 .hero-content{
   margin: 20rem 0;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-between;
 }
@@ -74,12 +75,14 @@ header{
   background-color: var(--green);
   font-size: 2.5rem;
   font-weight: 300;
+  text-align: center;
   text-decoration: none;
   color: white;
   padding: 2rem 4rem;
   border-radius: var(--radius);
   align-self: center;
   transition: .1s linear;
+  margin: 5rem 0;
 }
 
 .call-to-action:hover{
@@ -119,12 +122,30 @@ header{
 /* MAIN */
 main{
   display: grid;
-  grid-template-areas: "arrowLeft caixas arrowRight";
+  width: 100%;
+  grid-template: 
+  "arrowLeft arrowRight" 5rem
+  "caixas caixas" 3fr; 
   gap: .5rem;
   height: 100vh;
   padding: var(--padding-default);
 }
 
+@media screen and (max-width: 1024px) {
+  main{
+  grid-template: 
+  "arrowLeft caixas caixas arrowRight" 1fr;
+  }
+  .icons{
+    height:  100%;
+  }
+}
+
+@media screen and (max-width: 425px){
+  body{
+    background-color: yellow;
+  }
+}
 
 /* SLIDES */
 
@@ -139,9 +160,9 @@ input{
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 5rem;
   background-color: var(--green);
   cursor: pointer;
+  height: 4rem;
 }
 
 .icons:hover{
@@ -174,6 +195,7 @@ input{
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   grid-area: caixas;
 }
 
@@ -181,8 +203,8 @@ input{
   display: grid;
   width: 100%;
   height: 100%;
-  grid-template-columns: repeat(4, 1fr);
-  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, auto));
+  justify-content: flex-start;
   gap: 1.5rem;
   
 }
