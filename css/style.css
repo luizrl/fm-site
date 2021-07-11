@@ -10,9 +10,9 @@
   font-size: 62.5%;
   font-family: 'Open Sans', sans-serif;
 
-  --blue: rgb(28, 82, 163);
+  --blue: #003366;
   --light-blue: rgb(45, 110, 207);
-  --green: rgb(0, 128, 53);
+  --green: #007d35;
   --bg: #2c2c2c;
 
 }
