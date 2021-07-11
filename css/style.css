@@ -13,6 +13,7 @@
   --blue: #003366;
   --light-blue: #004183;
   --green: #007d35;
+  --green-light: #00af49;
   --bg: #2c2c2c;
   --radius: .5rem;
   --padding-default: 5rem 10rem;
@@ -78,7 +79,12 @@ header{
   padding: 2rem 4rem;
   border-radius: var(--radius);
   align-self: center;
-  /* margin-right: 10rem; */
+  transition: .1s linear;
+}
+
+.call-to-action:hover{
+  background-color: var(--green-light);
+  font-weight: 400;
 }
 
 
@@ -98,16 +104,27 @@ header{
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: arrowAnimation 1s ease-in-out alternate-reverse infinite;
+}
+
+@keyframes arrowAnimation {
+  from{
+    transform: translateY(-.5rem);
+  }
+  to{
+    transform: translateY(.5rem);
+  }
 }
 
 /* MAIN */
 main{
   display: grid;
-  grid-template-areas: "arrow-left caixas arrow-right";
+  grid-template-areas: "arrowLeft caixas arrowRight";
   gap: .5rem;
   height: 100vh;
   padding: var(--padding-default);
 }
+
 
 /* SLIDES */
 
@@ -123,10 +140,23 @@ input{
   align-items: center;
   flex-direction: column;
   width: 5rem;
-  background-color: #c2c2c2;
+  background-color: var(--green);
+  cursor: pointer;
+}
+
+.icons:hover{
+  background-color: var(--green-light);
+}
+
+#rd-left:checked ~ .icon-1{
+  display: none;
+}
+
+#rd-right:checked ~ .icon-2{
+  display: none;
 }
 .icon-1{
-  grid-area: 'arrow-left';
+  grid-area: arrowLeft;
 }
 .icons img{
   width: 3rem;
@@ -135,7 +165,7 @@ input{
   transform: rotateY(180deg);
 }
 .icon-2{
-  grid-area: 'arrow-right';
+  grid-area: arrowRight;
 }
 
 /*Boxes */
@@ -144,7 +174,7 @@ input{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  grid-area: 'caixas';
+  grid-area: caixas;
 }
 
 .slide{
@@ -153,7 +183,7 @@ input{
   height: 100%;
   grid-template-columns: repeat(4, 1fr);
   justify-content: center;
-  gap: 0.4rem;
+  gap: 1.5rem;
   
 }
 
@@ -163,14 +193,16 @@ input{
   justify-content: center;
   align-items: flex-end;
   padding: 2rem;
-  border-bottom: 1rem solid var(--green);
+  border-left: .5rem solid var(--green);
   text-align: center;
   color: white;
   cursor: pointer;
+  transition: align-items .5s ease-in;
 }
 
 .slide > div:not(.content):hover{
-  background-color: var(--light-blue);
+  background-color: var(--green);
+  align-items: center;
 }
 
 
