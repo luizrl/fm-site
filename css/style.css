@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap');
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  font-size: 62.5%;
+  font-family: 'Open Sans', sans-serif;
+
+  --blue: rgb(28, 82, 163);
+  --light-blue: rgb(45, 110, 207);
+  --green: rgb(0, 128, 53);
+  --bg: #2c2c2c;
+
+}
+
+
+/* GERAL */
+body{
+  color: white;
+  position: relative;
+  background-color: var(--bg);
+}
+
+h1{
+  font-size: 3.2rem;
+  line-height: 1;
+  font-weight: bold;
+}
+
+h2{
+  font-size: 3rem;
+}
+p{
+  font-size: 2rem;
+}
+
+highlight{
+  color: var(--green);
+}
+
+quote{
+  font-size: 2rem;
+  background-color: var(--green);
+  padding: .1rem;
+  border-radius: .5rem;
+}
+
+.info{
+  display: flex;
+  /* position: fixed; */
+  width: 100%;
+  background-color: var(--green);
+  color: white;
+  padding:  1rem 5rem;
+  
+}
+
+/* HEADER */
+header{
+  padding: 2rem 5rem;
+}
+
+
+
+header h1{
+  text-transform: uppercase; 
+  margin-bottom: 1rem;
+}
+
+/* MAIN */
+main{
+  display: grid;
+  grid-template-areas: "arrow-left caixas arrow-right";
+  gap: .5rem;
+  height: 100%;
+  padding: 0  5rem  5rem 5rem;
+}
+
+
+/* SLIDES */
+
+/* Botões */
+input{
+  display: none;
+}
+
+.icons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 5rem;
+  background-color: #c2c2c2;
+}
+.icon-1{
+  grid-area: 'arrow-left';
+}
+.icons img{
+  width: 3rem;
+}
+.icon-1 img{
+  transform: rotateY(180deg);
+}
+
+.icon-2{
+  grid-area: 'arrow-right';
+}
+
+/*Boxes */
+.boxes{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  grid-area: 'caixas';
+}
+
+.slide{
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  gap: 0.4rem;
+  
+}
+
+.slide > div{
+  padding: 2rem;
+  /* height: 12rem; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  border-radius: .5rem;
+  background-color: var(--blue);
+  color: white;
+}
+
+.slide > div:not(.content):hover{
+  background-color: var(--light-blue);
+}
+
+
+.group-off{
+  display: none;
+}
+
+/* SLIDE ON */
+#rd-left:checked ~ .boxes .slide-left{
+  display: grid;
+}
+#rd-right:checked ~ .boxes .slide-right{
+  display: grid;
+}
+
+/* CONTEÚDO */
+
+.close{
+  display: none;
+  position: fixed;
+  width: 5rem;
+  height: 5rem;
+  top: 5%;
+  right: 5%;
+  z-index: 1;
+}
+.close span{
+  display: block;
+  background-color: rgb(201, 42, 42);
+  width: 5rem;
+  height: .5rem;
+  margin: .5rem;
+}
+
+.close span:first-of-type{
+  transform: rotate(45deg);
+}
+.close span:last-of-type{
+  transform: rotate(-45deg) translate(.6rem,-.7rem);
+}
+.close-on{
+  display: block;
+  z-index: 300;
+}
+
+
+/* CONTEÚDO */
+.box-off + .content{
+  display: none;
+
+}
+
+.box-on + .content{
+  display: block;
+  display: block;
+  background-color: white;
+  color: black;
+  width: 100%;
+  height: 100vh;
+  padding: 10rem;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
