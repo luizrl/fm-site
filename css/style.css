@@ -17,8 +17,15 @@
   --bg: #2c2c2c;
   --radius: .5rem;
   --padding-default: 5rem 10rem;
+  --h1-size: clamp(2.5rem, 4vw, 4rem);
+  --h2-size: clamp(2rem, 3.5vw, 3.5rem);
+  --h3-size: clamp(1.7rem, 3vw, 3rem);
+  --p-size: clamp(1.5rem, 2vw, 2rem);
+  --default-bg: white;
+  --default-color: white;
 
 }
+
 
 
 /* GERAL */
@@ -28,16 +35,21 @@ body{
 }
 
 h1{
-  font-size: 4rem;
+  font-size: var(--h1-size);
   font-weight: 400;
 }
 
+h2{
+  font-size: var(--h2-size);
+  font-weight: 300;
+}
+
 h3{
-  font-size: 2.5rem;
+  font-size: var(--h3-size);
   font-weight: 300;
 }
 p{
-  font-size: 2rem;
+  font-size: var(--p-size);
 }
 
 b{
@@ -47,24 +59,35 @@ b{
 /* HEADER */
 header{
   display: block;
-  background-color: white;
+  background-color: var(--default-bg);
   width: 100%;
   height: 100vh;
-  color: white;
+  color: var(--default-color);
 }
 
 .hero{
   width: 100%;
-  height: 90vh;
+  height: 80vh;
   background-color: var(--blue);
   padding: var(--padding-default);
 
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
+.header-info{
+  width: 100%;
+  height: 10vh;
+  padding: var(--padding-default);
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  background-color:  var(--light-blue);
+}
 .hero-content{
-  margin: 20rem 0;
+  margin-top: 5rem;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -73,11 +96,11 @@ header{
 
 .call-to-action{
   background-color: var(--green);
-  font-size: 2.5rem;
+  font-size: clamp(1.8rem, 2.5vw, 2.5rem);
   font-weight: 300;
   text-align: center;
   text-decoration: none;
-  color: white;
+  color: var(--default-color);
   padding: 2rem 4rem;
   border-radius: var(--radius);
   align-self: center;
@@ -97,8 +120,8 @@ header{
 
 .content-title h3{
   background-color: var(--light-blue);
-  font-weight: 300;
-  padding: 1rem 2rem;
+  margin-top: 1rem;
+  padding: .5rem;
   border-radius: var(--radius) ;
 }
 
@@ -131,21 +154,6 @@ main{
   padding: var(--padding-default);
 }
 
-@media screen and (max-width: 1024px) {
-  main{
-  grid-template: 
-  "arrowLeft caixas caixas arrowRight" 1fr;
-  }
-  .icons{
-    height:  100%;
-  }
-}
-
-@media screen and (max-width: 425px){
-  body{
-    background-color: yellow;
-  }
-}
 
 /* SLIDES */
 
@@ -217,7 +225,7 @@ input{
   padding: 2rem;
   border-left: .5rem solid var(--green);
   text-align: center;
-  color: white;
+  color: var(--default-color);
   cursor: pointer;
   transition: align-items .5s ease-in;
 }
@@ -280,7 +288,7 @@ input{
 .box-on + .content{
   display: block;
   display: block;
-  background-color: white;
+  background-color: var(--default-bg);
   color: black;
   width: 100%;
   height: 100vh;
@@ -290,4 +298,35 @@ input{
   top: 0;
   left: 0;
   z-index: 100;
+}
+
+
+/* MEDIA QUERIES */
+
+
+@media screen and (max-width: 1024px) {
+  main{
+  grid-template: 
+  "arrowLeft caixas caixas arrowRight" 1fr;
+  }
+  .icons{
+    height:  100%;
+  }
+}
+
+@media screen and (max-width: 550px){
+  :root{
+    --padding-default: 5rem 5rem;
+  }
+  
+}
+@media screen and (max-width: 425px){
+  :root{
+    --padding-default: 5rem 2rem;
+  } 
+}
+
+@media screen and (max-width: 350px){
+
+
 }
