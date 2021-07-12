@@ -22,8 +22,8 @@
 
   function closeAction() {
     let openWindow = document.querySelector('.box-on');
-    openWindow.classList.remove('box-on');
     openWindow.classList.add('box-off');
+    openWindow.classList.remove('box-on');
 
     closeButtom.classList.remove('close-on');
   }

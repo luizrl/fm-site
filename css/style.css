@@ -253,26 +253,14 @@ input{
 .close{
   display: none;
   position: fixed;
-  width: 5rem;
-  height: 5rem;
+  border-radius: 50%;
   top: 5%;
   right: 5%;
   z-index: 1;
-}
-.close span{
-  display: block;
-  background-color: rgb(201, 42, 42);
-  width: 5rem;
-  height: .5rem;
-  margin: .5rem;
+  cursor: pointer;
 }
 
-.close span:first-of-type{
-  transform: rotate(45deg);
-}
-.close span:last-of-type{
-  transform: rotate(-45deg) translate(.6rem,-.7rem);
-}
+
 .close-on{
   display: block;
   z-index: 300;
@@ -298,6 +286,7 @@ input{
   top: 0;
   left: 0;
   z-index: 100;
+  cursor: default;
 }
 
 
