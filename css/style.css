@@ -147,6 +147,7 @@ main{
   display: grid;
   width: 100%;
   grid-template: 
+  "pesquisa pesquisa"
   "arrowLeft arrowRight" 5rem
   "caixas caixas" 3fr; 
   gap: .5rem;
@@ -156,9 +157,33 @@ main{
 
 
 /* SLIDES */
+.search {
+  width: 60rem;
+  grid-area: pesquisa;
+}
+
+.search input{
+  width: 30rem;
+  padding: 1rem 2rem;
+  border: 2px solid var(--blue);
+  border-radius: var(--radius);
+  outline: none;
+}
+
+.search button{
+  width: 10rem;
+  padding: 1rem;
+  background-color: var(--blue);
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+  border: 2px solid var(--blue);
+  border-radius: var(--radius);
+  cursor: pointer;
+}
 
 /* Botões */
-input{
+input[type="radio"]{
   display: none;
 }
 
