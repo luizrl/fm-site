@@ -1,10 +1,11 @@
 (function () {
 
   // VARIÁVEIS
-  let divBoxes = Array.prototype.slice.call((document.querySelectorAll('.slide .box')));
-  let closeButtom = document.querySelector('.close');
-  let searchInput = document.querySelector('.search input');
-  let titleBox = Array.prototype.slice.call(document.querySelectorAll('.box p'));
+  const divBoxes = Array.prototype.slice.call((document.querySelectorAll('.slide .box')));
+  const closeButtom = document.querySelector('.close');
+  const searchInput = document.querySelector('.search input');
+  const titleBox = Array.prototype.slice.call(document.querySelectorAll('.box p'));
+  const contentTitle = document.querySelectorAll('.content h1');
 
 
   // CONTEÚDO
@@ -17,6 +18,12 @@
 
   // BUSCA
   searchInput.addEventListener('keyup', filterBoxes);
+
+  // Titulo nas pop-up
+
+  titleBox.forEach( (title,index) => {
+    contentTitle[ index ].innerText = title.innerText;
+  });
 
 
 
