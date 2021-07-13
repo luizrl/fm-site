@@ -170,17 +170,7 @@ main{
   outline: none;
 }
 
-.search button{
-  width: 10rem;
-  padding: 1rem;
-  background-color: var(--blue);
-  color: white;
-  text-transform: uppercase;
-  text-align: center;
-  border: 2px solid var(--blue);
-  border-radius: var(--radius);
-  cursor: pointer;
-}
+
 
 /* Botões */
 input[type="radio"]{
@@ -293,6 +283,8 @@ input[type="radio"]{
 
 
 /* CONTEÚDO */
+
+
 .box + .content{
   display: none;
 
