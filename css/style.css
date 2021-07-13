@@ -144,9 +144,9 @@ header{
 
 /* MAIN */
 main{
-  height: 100vh;
+  /* height: 100vh; */
   display: grid;
-  margin: 4rem 0;
+  margin: 0rem 0;
   width: 100%;
   grid-template: 
   "pesquisa pesquisa"
@@ -162,7 +162,7 @@ main{
   padding: var(--padding-default);
   padding-top: 0;
   padding-bottom: 0;
-  margin: 3rem 0;
+  margin: 1rem 0;
   grid-area: pesquisa;
 }
 
@@ -220,16 +220,13 @@ input[type="radio"]{
 .boxes{
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   grid-area: caixas;
-  margin-bottom: 5rem;
 
 }
 
 .slide{
-  display: grid;
   width: 100%;
   grid-template-columns: repeat(auto-fit, minmax(20rem, auto));
   justify-content: flex-start;
