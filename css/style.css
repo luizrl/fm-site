@@ -268,13 +268,12 @@ input{
 
 
 /* CONTEÚDO */
-.box-off + .content{
+.box + .content{
   display: none;
 
 }
 
 .box-on + .content{
-  display: block;
   display: block;
   background-color: var(--default-bg);
   color: black;
