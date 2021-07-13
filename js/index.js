@@ -31,13 +31,7 @@
       if (!arrayBox.indexOf(valueBox)) {
         let boxElement = box.parentElement.style;
         boxElement.display = 'block';
-        boxElement.height = "20rem";
-        boxElement.width = "20rem";
 
-        // Remove setas
-        Array.from(document.querySelectorAll('.icons')).forEac(arrow => {
-          arrow.style.display = "none";
-        });
       }
 
       else {
