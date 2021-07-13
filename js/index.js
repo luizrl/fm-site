@@ -19,8 +19,8 @@
   // BUSCA
   searchInput.addEventListener('keyup', filterBoxes);
 
+  // POP-UP
   // Titulo nas pop-up
-
   titleBox.forEach( (title,index) => {
     contentTitle[ index ].innerText = title.innerText;
   });
