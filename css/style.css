@@ -302,6 +302,13 @@ input[type="radio"]{
   z-index: 300;
 }
 
+.select select{
+  width: 30rem;
+  padding: 1rem;
+  border: 3px solid var(--blue);
+  outline: none;
+  border-radius: var(--radius);
+}
 
 /* CONTEÚDO */
 
