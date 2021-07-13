@@ -308,6 +308,27 @@ input[type="radio"]{
   border: 3px solid var(--blue);
   outline: none;
   border-radius: var(--radius);
+  margin: 0 1rem;
+}
+
+.controles{
+  display: flex;
+}
+
+.controles .button-left{
+  border-right: var(--green);
+  border-width: 2rem;
+  border-style: solid;
+  cursor: pointer;
+}
+
+.controles .button-right{
+  width: 4rem;
+  height: 4rem;
+  border-left: var(--green);
+  border-width: 2rem;
+  border-style: solid;
+  cursor: pointer;
 }
 
 /* CONTEÚDO */
