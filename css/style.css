@@ -393,17 +393,23 @@ input[type="radio"]{
   :root{
     --padding-default: 5rem 5rem;
   }
+   #select-content{
+     width: 15rem;
+   }
   
 }
 @media screen and (max-width: 425px){
   :root{
     --padding-default: 5rem 2rem;
   } 
+  .navegation-on > .controles{
+    left: 0%;
+    transform: translate(0, -5%);
+  }
 }
 
 @media screen and (max-width: 350px){
   .search input{
     width: 20rem;
   }
-
 }

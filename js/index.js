@@ -25,13 +25,13 @@
 
   // POP-UP
   // Titulo nas pop-up
-  titleBox.forEach( (title,index) => {
-    contentTitle[ index ].innerText = title.innerText;
+  titleBox.forEach((title, index) => {
+    contentTitle[index].innerText = title.innerText;
   });
 
   // CONTROLE
 
-  titleBox.forEach( (item, index) => {
+  titleBox.forEach((item, index) => {
     let optionSelect = document.createElement('option');
     optionSelect.innerText = item.innerText;
     optionSelect.id = 'opt-' + index;
@@ -43,69 +43,79 @@
 
   buttonLeft.addEventListener('click', previousTab);
   buttonRight.addEventListener('click', nextTab);
-  
-  
+
+
   // FUNÇÕES
-  function previousTab(){
+  function previousTab() {
     const options = Array.prototype.slice.call(selectInput);
     let position;
-    
-    options.forEach( (item, index) => {
-      if (item.value == selectInput.value){
-          position = index;
-      }
-    });
 
-    if (position > 0){
-      position -= 1;
-      selectInput.value = options[ position ].value;
-
-      if (position > 0){
-        document.querySelector('.box-' + (position)).classList.remove('box-on');
-      }
-
-      selectInput.dispatchEvent(new Event('change'));
-    }
-    
-  }
-  function nextTab(){
-    const options = Array.prototype.slice.call(selectInput);
-    let optionsLenght = options.length;
-    let position;
-    
-    options.forEach( (item, index) => {
-      if (item.value == selectInput.value){
+    options.forEach((item, index) => {
+      if (item.value == selectInput.value) {
         position = index;
       }
     });
 
-    if (position >= 0 && position < (optionsLenght - 1)){
-      position += 1;
-      selectInput.value = options[ position ].value;
+    if (position > 0) {
+      position -= 1;
+      selectInput.value = options[position].value;
 
-      selectInput.dispatchEvent(new Event('change'));
+      if (position > 0) {
+        document.querySelector('.box-' + (position)).classList.remove('box-on');
+      }
     }
+
+    
+    if (position < 16){
+      document.querySelector('#rd-right').removeAttribute('checked');
+      document.querySelector('#rd-left').setAttribute('checked','');
+    }
+
+    selectInput.dispatchEvent(new Event('change'));
 
   }
 
-  function selectOption(){
+  function nextTab() {
+    const options = Array.prototype.slice.call(selectInput);
+    let optionsLenght = options.length;
+    let position;
+
+    options.forEach((item, index) => {
+      if (item.value == selectInput.value) {
+        position = index;
+      }
+    });
+
+    if (position >= 0 && position < (optionsLenght - 1)) {
+      position += 1;
+      selectInput.value = options[position].value;
+      selectInput.dispatchEvent(new Event('change'));
+    }
+
+    if (position > 15){
+      document.querySelector('#rd-left').removeAttribute('checked');
+      document.querySelector('#rd-right').setAttribute('checked','');
+    }
+  }
+
+  function selectOption() {
 
     let arrayOptions = Array.prototype.slice.call(selectInput);
     let currentOption;
-    divBoxes.forEach( box => {
+    divBoxes.forEach(box => {
       let arrayClass = Array.from(box.classList);
-      if (arrayClass.indexOf('box-on') != -1){
+      if (arrayClass.indexOf('box-on') != -1) {
         box.classList.remove('box-on');
       }
     });
 
-    arrayOptions.forEach( item => {
-      if (item.value == selectInput.value){  
+    arrayOptions.forEach(item => {
+      if (item.value == selectInput.value) {
         boxIdentifier = '.box-' + Number(item.id.split('-')[1]);
 
-        let box =  document.querySelector(boxIdentifier);
+        let box = document.querySelector(boxIdentifier);
         box.classList.add('box-on');
-        
+
         navegationButton.classList.add('navegation-on');
       }
     });
