@@ -150,7 +150,7 @@ header{
 
 /* MAIN */
 main{
-  /* height: 100vh; */
+  height: 100vh;
   display: grid;
   margin: 0rem 0;
   width: 100%;
@@ -164,23 +164,6 @@ main{
 
 
 /* SLIDES */
-.search {
-  padding: var(--padding-default);
-  padding-top: 0;
-  padding-bottom: 0;
-  margin: 1rem 0;
-  grid-area: pesquisa;
-}
-
-.search input{
-  width: 30rem;
-  padding: 1rem 2rem;
-  border: 2px solid var(--blue);
-  border-radius: var(--radius);
-  outline: none;
-}
-
-
 
 /* Botões */
 input[type="radio"]{
@@ -264,6 +247,10 @@ input[type="radio"]{
   justify-content: center;
 }
 
+
+.box-manipulation{
+  display: flex;
+}
 
 .group-off{
   display: none;
@@ -417,7 +404,5 @@ input[type="radio"]{
 }
 
 @media screen and (max-width: 350px){
-  .search input{
-    width: 20rem;
-  }
+ 
 }

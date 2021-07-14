@@ -22,9 +22,6 @@
   // Fecha janela janela
   closeButton.addEventListener('click', closeAction);
 
-  // BUSCA
-  searchInput.addEventListener('keyup', filterBoxes);
-
   // POP-UP
   // Titulo nas pop-up
   titleBox.forEach((title, index) => {
@@ -132,46 +129,6 @@
         navegationButton.classList.add('navegation-on');
       }
     });
-  }
-
-
-  function filterBoxes() {
-    const valueBox = this.value.toLowerCase();
-    const slideRight = document.querySelectorAll('.slide')[1];
-    const iconRight = document.querySelectorAll('.icons')[1];
-
-    titleBox.forEach(box => {
-      
-      let arrayBox = (box.innerText.toLowerCase()).replace(/[^a-zA-Z0-9 ]/g, '');
-
-      let findIt = !!(arrayBox.split(' ')).find(element => element == valueBox);
-
-      if (findIt) {
-        box.parentElement.style.display = 'flex';
-
-        slideRight.classList.add('slide-right-on');
-        slideRight.classList.remove('slide-right');
-
-        iconRight.classList.add('icon-2-off');
-        iconRight.classList.remove('icon-2');
-      }
-
-      else if (!valueBox) {
-        box.parentElement.style.display = 'flex';
-
-        slideRight.classList.add('slide-right');
-        slideRight.classList.remove('slide-right-on');
-
-        iconRight.classList.add('icon-2');
-        iconRight.classList.remove('icon-2-off');
-        
-      }
-      else {
-        box.parentElement.style.display = 'none';
-      }
-
-    });
-
   }
 
 
