@@ -57,11 +57,7 @@ b{
 }
 ol, ul{
   padding: 0;
-  margin-left: 3rem;
-}
-
-ol li{
-  font-size: 2.5rem;
+  margin: 1rem 0 1rem 3rem;
 }
 
 li ol li {
@@ -69,7 +65,26 @@ li ol li {
 }
 
 li{
+  font-size: 2rem;
+  margin: .5rem;
   line-break: auto;
+}
+
+blockquote{
+  font-size: 2rem;
+  margin-top: 1rem;
+  background-color: #cccc;
+  padding: 1rem;
+}
+
+img{
+  width: 50%;
+}
+
+hr{
+  background-color: var(--blue);
+  margin: 1rem;
+  border: 1px solid var(--blue);
 }
 
 /* HEADER */
@@ -146,6 +161,27 @@ header{
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+
+summary{
+  /* width: 100%; */
+  background-color: var(--green);
+  color: white;
+  border-radius: var(--radius);
+  margin: 1rem;
+  padding: 1rem;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+details{
+  text-align: center;
+}
+
+details > img{
+  width: 30%;
 }
 
 /* MAIN */
@@ -346,7 +382,6 @@ input[type="radio"]{
   align-items: center;
   border: none;
 
-
   position: fixed;
   top: 0;
   left: 0;
@@ -362,14 +397,23 @@ input[type="radio"]{
   margin-bottom: 4rem;
 }
 
-.content > *{
+.content > div{
   text-align: left;
   max-width: 80rem;
+  height: 100%;
+}
+
+.content .scroll{
+  height: 100%;
+  /* padding-bottom: 2rem; */
+  overflow: scroll;
 }
 
 .content p{
-  font-size: 2.5rem;
+  font-size: 2rem;
 }
+
+
 
 /* MEDIA QUERIES */
 

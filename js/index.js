@@ -4,7 +4,6 @@
   const divBoxes = Array.prototype.slice.call((document.querySelectorAll('.slide .box')));
   const navegationButton = document.querySelector('.navegation');
   const closeButton = document.querySelector('.close');
-  const searchInput = document.querySelector('.search input');
   const titleBox = Array.prototype.slice.call(document.querySelectorAll('.box p'));
   const contentTitle = document.querySelectorAll('.content h1');
   const selectInput = document.querySelector('#select-content');
@@ -65,7 +64,7 @@
     }
 
 
-    if (position < 16) {
+    if (position <= 16) {
       radiusRight.removeAttribute('checked');
       radiusLeft.setAttribute('checked', '');
     }
