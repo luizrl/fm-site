@@ -274,7 +274,7 @@ input[type="radio"]{
   margin-top: 1rem;
 }
 /* SLIDE ON */
-#rd-left:checked ~ .boxes .slide-left{
+#rd-left:checked ~ .boxes  .slide-left{
   display: grid;
 }
 #rd-right:checked ~ .boxes .slide-right{

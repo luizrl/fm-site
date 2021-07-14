@@ -147,7 +147,7 @@
       let findIt = !!(arrayBox.split(' ')).find(element => element == valueBox);
 
       if (findIt) {
-        box.parentElement.style.display = 'block';
+        box.parentElement.style.display = 'flex';
 
         slideRight.classList.add('slide-right-on');
         slideRight.classList.remove('slide-right');
@@ -157,7 +157,7 @@
       }
 
       else if (!valueBox) {
-        box.parentElement.style.display = 'block';
+        box.parentElement.style.display = 'flex';
 
         slideRight.classList.add('slide-right');
         slideRight.classList.remove('slide-right-on');
