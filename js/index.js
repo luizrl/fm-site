@@ -64,7 +64,7 @@
     }
 
 
-    if (position <= 16) {
+    if (position < 16) {
       radiusRight.removeAttribute('checked');
       radiusLeft.setAttribute('checked', '');
     }
