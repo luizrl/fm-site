@@ -10,6 +10,8 @@
   const selectInput = document.querySelector('#select-content');
   const buttonLeft = document.querySelector('.button-left');
   const buttonRight = document.querySelector('.button-right');
+  const radiusRight = document.querySelector('#rd-right');
+  const radiusLeft = document.querySelector('#rd-left');
 
 
   // CONTEÚDO
@@ -67,8 +69,8 @@
 
     
     if (position < 16){
-      document.querySelector('#rd-right').removeAttribute('checked');
-      document.querySelector('#rd-left').setAttribute('checked','');
+      radiusRight.removeAttribute('checked');
+      radiusLeft.setAttribute('checked','');
     }
 
     selectInput.dispatchEvent(new Event('change'));
@@ -93,15 +95,15 @@
     }
 
     if (position > 15){
-      document.querySelector('#rd-left').removeAttribute('checked');
-      document.querySelector('#rd-right').setAttribute('checked','');
+      radiusLeft.removeAttribute('checked');
+      radiusRight.setAttribute('checked','');
     }
   }
 
   function selectOption() {
 
     let arrayOptions = Array.prototype.slice.call(selectInput);
-    let currentOption;
+
     divBoxes.forEach(box => {
       let arrayClass = Array.from(box.classList);
       if (arrayClass.indexOf('box-on') != -1) {
@@ -109,12 +111,23 @@
       }
     });
 
-    arrayOptions.forEach(item => {
+    arrayOptions.forEach((item) => {
       if (item.value == selectInput.value) {
-        boxIdentifier = '.box-' + Number(item.id.split('-')[1]);
+        let boxNumber = Number(item.id.split('-')[1]);
+        boxIdentifier = '.box-' + boxNumber;
 
         let box = document.querySelector(boxIdentifier);
         box.classList.add('box-on');
+
+        if (boxNumber > 15){
+          radiusLeft.removeAttribute('checked');
+          radiusRight.setAttribute('checked','');
+
+        }
+        else{
+          radiusRight.removeAttribute('checked');
+          radiusLeft.setAttribute('checked','');
+        }
 
         navegationButton.classList.add('navegation-on');
       }
