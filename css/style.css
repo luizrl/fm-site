@@ -146,16 +146,6 @@ header{
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: arrowAnimation 1s ease-in-out alternate-reverse infinite;
-}
-
-@keyframes arrowAnimation {
-  from{
-    transform: translateY(-.5rem);
-  }
-  to{
-    transform: translateY(.5rem);
-  }
 }
 
 /* MAIN */

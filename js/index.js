@@ -52,9 +52,7 @@
     
     options.forEach( (item, index) => {
       if (item.value == selectInput.value){
-        if (item.id != "defaul"){
           position = index;
-        }
       }
     });
 
@@ -62,13 +60,11 @@
       position -= 1;
       selectInput.value = options[ position ].value;
 
-      if (position > 0)
+      if (position > 0){
         document.querySelector('.box-' + (position)).classList.remove('box-on');
+      }
 
       selectInput.dispatchEvent(new Event('change'));
-    
-      document.querySelectorAll('.slide-left').style.display = 'grid';
-      document.querySelectorAll('.slide-right').style.display = 'grid';
     }
     
   }
@@ -104,7 +100,7 @@
     });
 
     arrayOptions.forEach( item => {
-      if (item.value == selectInput.value && item.id != 'default'){  
+      if (item.value == selectInput.value){  
         boxIdentifier = '.box-' + Number(item.id.split('-')[1]);
 
         let box =  document.querySelector(boxIdentifier);
