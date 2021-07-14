@@ -9,7 +9,6 @@
 :root{
   font-size: 62.5%;
   font-family: 'Roboto', sans-serif;
-
   --blue: #003366;
   --light-blue: #004183;
   --green: #007d35;
@@ -360,6 +359,16 @@ input[type="radio"]{
   border-width: 2rem;
   border-style: solid;
   cursor: pointer;
+}
+
+.progress-bar span{
+  height: 1rem;
+  background-color: var(--blue);
+  width: 3rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 300;
 }
 
 /* CONTEÚDO */

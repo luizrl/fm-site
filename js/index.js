@@ -11,6 +11,7 @@
   const buttonRight = document.querySelector('.button-right');
   const radiusRight = document.querySelector('#rd-right');
   const radiusLeft = document.querySelector('#rd-left');
+  const bar = document.querySelector('.progress-bar span');
 
 
   // CONTEÚDO
@@ -44,6 +45,16 @@
 
 
   // FUNÇÕES
+  function progressBar(boxNumber){
+    barLenght = divBoxes.length;
+    boxNumber = boxNumber + 1;
+    widthTotal = 100;
+    if (boxNumber > 0 && boxNumber <= barLenght){
+      bar.style.width = String( (widthTotal/barLenght) * boxNumber + '%');
+      console.log(widthTotal,barLenght, boxNumber);
+    }
+  }
+
   function previousTab() {
     const options = Array.prototype.slice.call(selectInput);
     let position;
@@ -113,6 +124,7 @@
           radiusLeft.setAttribute('checked', '');
         }
         
+        progressBar(boxNumber);
         navegationButton.classList.add('navegation-on');
       }
 
