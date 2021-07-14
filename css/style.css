@@ -297,7 +297,7 @@ input[type="radio"]{
   height: 3rem;
 }
 
-.close-on{
+.navegation-on >.close{
   display: block;
   z-index: 300;
 }
@@ -312,7 +312,17 @@ input[type="radio"]{
 }
 
 .controles{
+  display: none;
+}
+
+.navegation-on > .controles{
   display: flex;
+  position: fixed;
+  top: 5%;
+  left: 50%;
+  z-index: 300;
+  transform: translate(-50%);
+
 }
 
 .controles .button-left{
