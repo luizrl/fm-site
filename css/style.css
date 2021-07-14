@@ -9,7 +9,6 @@
 :root{
   font-size: 62.5%;
   font-family: 'Roboto', sans-serif;
-
   --blue: #003366;
   --light-blue: #004183;
   --green: #007d35;
@@ -343,10 +342,11 @@ input[type="radio"]{
   left: 50%;
   z-index: 300;
   transform: translate(-50%);
-
+  
 }
 
 .controles .button-left{
+  border: transparent;
   border-right: var(--green);
   border-width: 2rem;
   border-style: solid;
@@ -356,10 +356,26 @@ input[type="radio"]{
 .controles .button-right{
   width: 4rem;
   height: 4rem;
+  border: transparent;
   border-left: var(--green);
   border-width: 2rem;
   border-style: solid;
   cursor: pointer;
+}
+
+.progress-bar span{
+  display: none;
+}
+
+.navegation-on > .progress-bar span{
+  display: block;
+  height: 1rem;
+  background-color: var(--blue);
+  width: 3rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 310;
 }
 
 /* CONTEÚDO */
@@ -369,6 +385,7 @@ input[type="radio"]{
   display: none;
 
 }
+
 
 .box-on + .content{
   display: flex;
@@ -381,6 +398,7 @@ input[type="radio"]{
   justify-content: center;
   align-items: center;
   border: none;
+  overflow-y: scroll;
 
   position: fixed;
   top: 0;
@@ -401,13 +419,14 @@ input[type="radio"]{
   text-align: left;
   max-width: 80rem;
   height: 100%;
+  margin-bottom: 2rem;
 }
 
-.content .scroll{
+/* .content .scroll{
   height: 100%;
   /* padding-bottom: 2rem; */
   overflow: scroll;
-}
+} */
 
 .content p{
   font-size: 2rem;
