@@ -57,20 +57,12 @@
     if (position > 0) {
       position -= 1;
       selectInput.value = options[position].value;
+      selectInput.dispatchEvent(new Event('change'));
 
       if (position > 0) {
-        document.querySelector('.box-' + (position)).classList.remove('box-on');
+        document.querySelector('.box-' + (position)).classList.add('box-on');  
       }
     }
-
-
-    if (position < 16) {
-      radiusRight.removeAttribute('checked');
-      radiusLeft.setAttribute('checked', '');
-    }
-
-    selectInput.dispatchEvent(new Event('change'));
-
   }
 
   function nextTab() {
@@ -89,13 +81,9 @@
       selectInput.value = options[position].value;
       selectInput.dispatchEvent(new Event('change'));
     }
-
-    if (position > 15) {
-      radiusLeft.removeAttribute('checked');
-      radiusRight.setAttribute('checked', '');
-    }
+    
   }
-
+  
   function selectOption() {
 
     let arrayOptions = Array.prototype.slice.call(selectInput);
@@ -111,22 +99,24 @@
       if (item.value == selectInput.value) {
         let boxNumber = Number(item.id.split('-')[1]);
         boxIdentifier = '.box-' + boxNumber;
-
+        
         let box = document.querySelector(boxIdentifier);
         box.classList.add('box-on');
-
+        
         if (boxNumber > 15) {
           radiusLeft.removeAttribute('checked');
           radiusRight.setAttribute('checked', '');
-
+          
         }
         else {
           radiusRight.removeAttribute('checked');
           radiusLeft.setAttribute('checked', '');
         }
-
+        
         navegationButton.classList.add('navegation-on');
       }
+
+      // selectInput.dispatchEvent(new Event('change'));
     });
   }
 
