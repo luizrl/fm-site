@@ -51,7 +51,6 @@
     widthTotal = 100;
     if (boxNumber > 0 && boxNumber <= barLenght){
       bar.style.width = String( (widthTotal/barLenght) * boxNumber + '%');
-      console.log(widthTotal,barLenght, boxNumber);
     }
   }
 

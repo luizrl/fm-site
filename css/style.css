@@ -362,13 +362,18 @@ input[type="radio"]{
 }
 
 .progress-bar span{
+  display: none;
+}
+
+.navegation-on > .progress-bar span{
+  display: block;
   height: 1rem;
   background-color: var(--blue);
   width: 3rem;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 300;
+  z-index: 310;
 }
 
 /* CONTEÚDO */
