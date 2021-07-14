@@ -198,6 +198,10 @@ input[type="radio"]{
   height: 4rem;
 }
 
+.icon-2-off{
+  display: none;
+}
+
 .icons:hover{
   background-color: var(--green-light);
 }
@@ -265,6 +269,10 @@ input[type="radio"]{
   display: none;
 }
 
+.slide-right-on{
+  display: grid;
+  margin-top: 1rem;
+}
 /* SLIDE ON */
 #rd-left:checked ~ .boxes .slide-left{
   display: grid;

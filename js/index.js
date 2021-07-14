@@ -67,10 +67,10 @@
       }
     }
 
-    
-    if (position < 16){
+
+    if (position < 16) {
       radiusRight.removeAttribute('checked');
-      radiusLeft.setAttribute('checked','');
+      radiusLeft.setAttribute('checked', '');
     }
 
     selectInput.dispatchEvent(new Event('change'));
@@ -94,9 +94,9 @@
       selectInput.dispatchEvent(new Event('change'));
     }
 
-    if (position > 15){
+    if (position > 15) {
       radiusLeft.removeAttribute('checked');
-      radiusRight.setAttribute('checked','');
+      radiusRight.setAttribute('checked', '');
     }
   }
 
@@ -119,14 +119,14 @@
         let box = document.querySelector(boxIdentifier);
         box.classList.add('box-on');
 
-        if (boxNumber > 15){
+        if (boxNumber > 15) {
           radiusLeft.removeAttribute('checked');
-          radiusRight.setAttribute('checked','');
+          radiusRight.setAttribute('checked', '');
 
         }
-        else{
+        else {
           radiusRight.removeAttribute('checked');
-          radiusLeft.setAttribute('checked','');
+          radiusLeft.setAttribute('checked', '');
         }
 
         navegationButton.classList.add('navegation-on');
@@ -136,22 +136,42 @@
 
 
   function filterBoxes() {
-    let valueBox = this.value.toLowerCase();
+    const valueBox = this.value.toLowerCase();
+    const slideRight = document.querySelectorAll('.slide')[1];
+    const iconRight = document.querySelectorAll('.icons')[1];
 
     titleBox.forEach(box => {
-      let arrayBox = (box.innerText.toLowerCase());
+      
+      let arrayBox = (box.innerText.toLowerCase()).replace(/[^a-zA-Z0-9 ]/g, '');
 
-      if (!arrayBox.indexOf(valueBox)) {
-        let boxElement = box.parentElement.style;
-        boxElement.display = 'block';
+      let findIt = !!(arrayBox.split(' ')).find(element => element == valueBox);
 
+      if (findIt) {
+        box.parentElement.style.display = 'block';
+
+        slideRight.classList.add('slide-right-on');
+        slideRight.classList.remove('slide-right');
+
+        iconRight.classList.add('icon-2-off');
+        iconRight.classList.remove('icon-2');
       }
 
+      else if (!valueBox) {
+        box.parentElement.style.display = 'block';
+
+        slideRight.classList.add('slide-right');
+        slideRight.classList.remove('slide-right-on');
+
+        iconRight.classList.add('icon-2');
+        iconRight.classList.remove('icon-2-off');
+        
+      }
       else {
         box.parentElement.style.display = 'none';
       }
 
     });
+
   }
 
 
