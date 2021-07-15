@@ -112,10 +112,22 @@ header{
   padding: var(--padding-default);
   padding-top: 2rem;
   padding-bottom: 2rem;
-  display: flex;
-  align-items: center;
   background-color:  var(--light-blue);
 }
+
+.header-info a{
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+
+}
+
+.header-info img{
+  width: 4rem;
+  margin-right: 1rem;
+}
+
 .hero-content{
   margin-top: 5rem;
   display: flex;
@@ -190,59 +202,13 @@ main{
   margin: 0rem 0;
   width: 100%;
   grid-template: 
-  "pesquisa pesquisa"
-  "arrowLeft arrowRight" 5rem
-  "caixas caixas" 3fr; 
+  "caixas"; 
   gap: .5rem;
   padding: var(--padding-default);
 }
 
 
 /* SLIDES */
-
-/* Botões */
-input[type="radio"]{
-  display: none;
-}
-
-/* Setas */
-.icons{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background-color: var(--green);
-  cursor: pointer;
-  height: 4rem;
-}
-
-.icon-2-off{
-  display: none;
-}
-
-.icons:hover{
-  background-color: var(--green-light);
-}
-
-#rd-left:checked ~ .icon-1{
-  display: none;
-}
-
-#rd-right:checked ~ .icon-2{
-  display: none;
-}
-.icon-1{
-  grid-area: arrowLeft;
-}
-.icons img{
-  width: 3rem;
-}
-.icon-1 img{
-  transform: rotateY(180deg);
-}
-.icon-2{
-  grid-area: arrowRight;
-}
 
 /*Boxes */
 .boxes{
@@ -259,9 +225,9 @@ input[type="radio"]{
   grid-template-columns: repeat(auto-fit, minmax(20rem, auto));
   justify-content: flex-start;
   gap: 1.5rem;
+  margin-bottom: 5rem;
   
 }
-
 .slide > .box{
   display: flex;
   height: 100%;
@@ -287,24 +253,11 @@ input[type="radio"]{
   display: flex;
 }
 
-.group-off{
-  display: none;
-}
-
-.slide-right-on{
-  display: grid;
-  margin-top: 1rem;
-}
-/* SLIDE ON */
-#rd-left:checked ~ .boxes  .slide-left{
-  display: grid;
-}
-#rd-right:checked ~ .boxes .slide-right{
+ .boxes .slide{
   display: grid;
 }
 
 /* CONTEÚDO */
-
 .close{
   display: none;
   position: fixed;
@@ -422,16 +375,43 @@ input[type="radio"]{
   margin-bottom: 2rem;
 }
 
-/* .content .scroll{
-  height: 100%;
-  /* padding-bottom: 2rem; */
-  overflow: scroll;
-} */
-
 .content p{
   font-size: 2rem;
 }
 
+
+/* PESQUISA */
+
+.search{
+  padding: var(--padding-default);
+}
+
+.search input{
+  width: 30rem;
+  padding: 1rem;
+  outline: none;
+  border: 2px solid var(--blue);
+  background-color: var(--default-bg);
+}
+
+/* Scrollbar */
+
+.content::-webkit-scrollbar {
+  display: none;
+}
+
+.content {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+::-webkit-scrollbar{
+  width: 1rem;
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: var(--green);
+}
 
 
 /* MEDIA QUERIES */
@@ -439,8 +419,8 @@ input[type="radio"]{
 
 @media screen and (max-width: 1024px) {
   main{
-  grid-template: 
-  "arrowLeft caixas caixas arrowRight" 1fr;
+  grid-template:
+  "caixas caixas" 1fr;
   }
   .icons{
     height:  100%;
@@ -464,8 +444,8 @@ input[type="radio"]{
     left: 0%;
     transform: translate(0, -5%);
   }
+  .search input{
+    width: 20rem;
+  }
 }
 
-@media screen and (max-width: 350px){
- 
-}
