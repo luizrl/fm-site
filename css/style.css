@@ -108,7 +108,6 @@ header{
 
 .header-info{
   width: 100%;
-  height: 10vh;
   padding: var(--padding-default);
   padding-top: 2rem;
   padding-bottom: 2rem;
@@ -129,9 +128,7 @@ header{
 }
 
 .hero-content{
-  margin-top: 5rem;
   display: flex;
-  flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-between;
 }
@@ -147,7 +144,7 @@ header{
   border-radius: var(--radius);
   align-self: center;
   transition: .1s linear;
-  margin: 5rem 0;
+  margin: 5rem ;
 }
 
 .call-to-action:hover{
@@ -162,13 +159,13 @@ header{
 
 .content-title h3{
   background-color: var(--light-blue);
-  margin-top: 1rem;
   padding: .5rem;
+  margin-top: 1rem;
   border-radius: var(--radius) ;
 }
 
 .arrow{
-  height: 10vh;
+  padding: 10vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -427,13 +424,32 @@ main{
   }
 }
 
-@media screen and (max-width: 550px){
+@media screen and (max-width: 602px){
   :root{
-    --padding-default: 5rem 5rem;
+    --padding-default: 5rem;
   }
-   #select-content{
-     width: 15rem;
+  .hero{
+    min-height: 46rem;
+  }
+  .hero-content{
+    flex-wrap: nowrap;
+  }
+
+  .call-to-action{
+    margin: 5rem 0;
+  }
+}
+
+@media screen and (max-width: 556px){
+  
+    .hero-content{
+      flex-wrap: wrap;
+    }
+
+    #select-content{
+      width: 15rem;
    }
+   
   
 }
 @media screen and (max-width: 425px){
@@ -447,5 +463,6 @@ main{
   .search input{
     width: 20rem;
   }
+  
 }
 
