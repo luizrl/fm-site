@@ -9,8 +9,6 @@
   const selectInput = document.querySelector('#select-content');
   const buttonLeft = document.querySelector('.button-left');
   const buttonRight = document.querySelector('.button-right');
-  const radiusRight = document.querySelector('#rd-right');
-  const radiusLeft = document.querySelector('#rd-left');
   const bar = document.querySelector('.progress-bar span');
 
 
@@ -112,16 +110,6 @@
         
         let box = document.querySelector(boxIdentifier);
         box.classList.add('box-on');
-        
-        if (boxNumber > 15) {
-          radiusLeft.removeAttribute('checked');
-          radiusRight.setAttribute('checked', '');
-          
-        }
-        else {
-          radiusRight.removeAttribute('checked');
-          radiusLeft.setAttribute('checked', '');
-        }
         
         progressBar(boxNumber);
         navegationButton.classList.add('navegation-on');
