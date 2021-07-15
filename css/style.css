@@ -134,6 +134,8 @@ header{
 }
 
 .call-to-action{
+  display: block;
+  min-height: 4rem;
   background-color: var(--green);
   font-size: 2rem;
   font-weight: 300;
@@ -426,7 +428,7 @@ main{
 
 @media screen and (max-width: 602px){
   :root{
-    --padding-default: 5rem;
+    --padding-default: 3rem;
   }
   .hero{
     min-height: 46rem;
@@ -436,10 +438,15 @@ main{
   }
 
   .call-to-action{
-    margin: 5rem 0;
+    margin-top: 5rem;
   }
 }
 
+@media screen {
+  header{
+    height: auto;
+  }
+}
 @media screen and (max-width: 556px){
   
     .hero-content{
