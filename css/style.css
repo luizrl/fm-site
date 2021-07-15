@@ -204,6 +204,7 @@ main{
   "caixas"; 
   gap: .5rem;
   padding: var(--padding-default);
+  padding-top: 0;
 }
 
 
@@ -383,6 +384,7 @@ main{
 
 .search{
   padding: var(--padding-default);
+  padding-top: 1rem;
 }
 
 .search input{
