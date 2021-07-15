@@ -10,6 +10,7 @@
   const buttonLeft = document.querySelector('.button-left');
   const buttonRight = document.querySelector('.button-right');
   const bar = document.querySelector('.progress-bar span');
+  const searchInput = document.querySelector('.search input');
 
 
   // CONTEÚDO
@@ -41,8 +42,34 @@
   buttonLeft.addEventListener('click', previousTab);
   buttonRight.addEventListener('click', nextTab);
 
+  // BUSCA
+  searchInput.addEventListener('keyup', filterBoxes);
+
 
   // FUNÇÕES
+  function filterBoxes() {
+    const valueBox = this.value.toLowerCase();
+  
+    titleBox.forEach(box => {
+      
+      let arrayBox = (box.innerText.toLowerCase()).replace(/!+?/g, '');
+  
+      let findIt = !!(arrayBox.split(' ')).find(element => element == valueBox);
+  
+      if (findIt) {
+        box.parentElement.style.display = 'flex';
+      }
+  
+      else if (!valueBox) {
+        box.parentElement.style.display = 'flex';
+      }
+      else {
+        box.parentElement.style.display = 'none';
+      }
+  
+    });
+  }
+    
   function progressBar(boxNumber){
     barLenght = divBoxes.length;
     boxNumber = boxNumber + 1;
@@ -115,7 +142,6 @@
         navegationButton.classList.add('navegation-on');
       }
 
-      // selectInput.dispatchEvent(new Event('change'));
     });
   }
 

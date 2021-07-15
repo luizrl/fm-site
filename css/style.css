@@ -112,10 +112,22 @@ header{
   padding: var(--padding-default);
   padding-top: 2rem;
   padding-bottom: 2rem;
-  display: flex;
-  align-items: center;
   background-color:  var(--light-blue);
 }
+
+.header-info a{
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+
+}
+
+.header-info img{
+  width: 4rem;
+  margin-right: 1rem;
+}
+
 .hero-content{
   margin-top: 5rem;
   display: flex;
@@ -213,6 +225,7 @@ main{
   grid-template-columns: repeat(auto-fit, minmax(20rem, auto));
   justify-content: flex-start;
   gap: 1.5rem;
+  margin-bottom: 5rem;
   
 }
 .slide > .box{
@@ -367,14 +380,47 @@ main{
 }
 
 
+/* PESQUISA */
+
+.search{
+  padding: var(--padding-default);
+}
+
+.search input{
+  width: 30rem;
+  padding: 1rem;
+  outline: none;
+  border: 2px solid var(--blue);
+  background-color: var(--default-bg);
+}
+
+/* Scrollbar */
+
+.content::-webkit-scrollbar {
+  display: none;
+}
+
+.content {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+::-webkit-scrollbar{
+  width: 1rem;
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: var(--green);
+}
+
 
 /* MEDIA QUERIES */
 
 
 @media screen and (max-width: 1024px) {
   main{
-  grid-template: 
-  "caixas" 1fr;
+  grid-template:
+  "caixas caixas" 1fr;
   }
   .icons{
     height:  100%;
@@ -398,8 +444,8 @@ main{
     left: 0%;
     transform: translate(0, -5%);
   }
+  .search input{
+    width: 20rem;
+  }
 }
 
-@media screen and (max-width: 350px){
- 
-}
